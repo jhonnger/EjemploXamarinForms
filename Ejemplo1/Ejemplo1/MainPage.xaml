@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Ejemplo1.MainPage">
+
+    <StackLayout Orientation="Vertical" VerticalOptions="Start" Padding="20">
+
+        <Image Source="{OnPlatform Default=logo.png, WPF=logo.png }"  
+               HeightRequest="150" 
+               WidthRequest="{OnPlatform iOS=300, Android=250}"
+               VerticalOptions="Start">
+        </Image>
+        <Label VerticalOptions="Start" Text="Login" FontSize="22" FontAttributes="Bold" VerticalTextAlignment="Start"></Label>
+        <Label Text="Bienvenido de nuevo, inicia sesión con tu cuenta."></Label>
+        <Label  HorizontalOptions="StartAndExpand" VerticalOptions="Start"  WidthRequest="60" HeightRequest="6"  BackgroundColor="#FF119CA5"/>
+        <Grid HorizontalOptions="FillAndExpand" ColumnSpacing="0" Margin="0,25,0,0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="90*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Source="user.png" Grid.Column="0" Grid.Row="1"/>
+            <Entry x:Name="username" Placeholder="Usuario" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5"></Entry>
+
+            <Image Source="lock.png" Grid.Column="0" Grid.Row="2"/>
+            <Entry x:Name="password" Placeholder="Contraseña" IsPassword="True" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="5"></Entry>
+
+            <Button Text="Iniciar Sesión" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="6"></Button>
+            <Button Text="Salir" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="6"></Button>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
